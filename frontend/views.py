@@ -1,8 +1,8 @@
 #coding:utf8
-from flask import blueprints, render_template
+from flask import Blueprint, render_template
 
 
-bp = blueprints('frontend', __name__)
+bp = Blueprint('frontend', __name__)
 
 @bp.route('/')
 def index():

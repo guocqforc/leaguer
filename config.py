@@ -4,6 +4,6 @@ import os
 
 BLUEPRINTS = (
     ('mg.views', '/mg'),
-    ('frontend.vies', ''),
+    ('frontend.views', ''),
 )
 

@@ -3,13 +3,12 @@
 from importlib import import_module
 from flask import Flask
 
-
 def create_app(config=None, name=None):
     if not name:
         name = __name__
 
     app = Flask(name)
-    app.config.from_pyfile('config')
+    app.config.from_pyfile('config.py')
 
     configure_extensions(app)
     configure_views(app)
