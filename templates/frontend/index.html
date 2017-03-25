@@ -3,12 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>大团建</title>
+    <style>
+        .main{
+        }
+    </style>
+    <script href="{{url_for('static',file_name='js/jquery.min.js')}}"></script>
 </head>
 <body>
     <div class="main">
-        <div class=""> 
+        <div class="">
             <div style="width: 100%">
                 <img style="width: 100%" src="{{url_for('static',filename='img/ftd/index/bj.jpg')}}">
+            </div>
+        </div>
+        <div id="voter_view">
+            <div>
+                <span>选出你最喜欢?</span>
+                <div><span>0</span><a href="#">1</a> </div>
+                <div><span>0</span><a href="#">2</a> </div>
+                <div><span>0</span><a href="#">3</a> </div>
+                <div><span>0</span><a href="#">4</a> </div>
+                <div><span>0</span><a href="#">5</a> </div>
+
             </div>
         </div>
     </div>
