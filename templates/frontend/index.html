@@ -6,27 +6,115 @@
     <style>
         .main{
         }
+
+    * {
+        font-family: Arial, "Free Sans";
+    }
+    #container {
+        margin-top: 20px;
+        color: #fff;
+    }
+    #container #question {
+        display: block;
+        padding: 20px;
+        font-weight: bold;
+        letter-spacing: -3px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 40px;
+    }
+    #container>#question_view>div {
+        font-weight: bold;
+        letter-spacing: -3px;
+        background: #0099cc;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 34px;
+        color: #ffffff;
+        border-left: 20px solid #333;
+        width: 400px;
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0 0.5em 0.5em 0;
+        border-radius: 0 1.5em 1.5em 0;
+    }
+    #container div a {
+        border-radius: 0.3em;
+        text-decoration: none;
+        color: #0099cc;
+        padding: 5px 15px;
+        background: #333;
+        margin: 0 20px;
+    }
+    #container div a:hover {
+        color: #fff;
+    }
+    #main {
+        background: #0099cc;
+        margin-top: 0;
+        padding: 2px 0 4px 0;
+        text-align: center;
+    }
+    #main a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: Arial;
+    }
+    #main a:hover {
+        text-decoration: underline;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff url('images/trentanove.gif') repeat right top;
+    }
+    #text {
+        margin: 0 auto;
+        width: 500px;
+        font-size: 12px;
+        color: #0099cc;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
     </style>
-    <script href="{{url_for('static',file_name='js/jquery.min.js')}}"></script>
+    <script  src="static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#question_view div a").click(function () {
+                $(this).parent().animate({
+                    width: '+=100px'
+                }, 350);
+
+                $(this).prev().html(parseInt($(this).prev().html()) + 1);
+                return false;
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="main">
+    <div class="main" style="">
         <div class="">
-            <div style="width: 100%">
+            <div style="width: 100%;text-align: center">
                 <img style="width: 100%" src="{{url_for('static',filename='img/ftd/index/bj.jpg')}}">
             </div>
         </div>
-        <div id="voter_view">
-            <div>
-                <span>选出你最喜欢?</span>
-                <div><span>0</span><a href="#">1</a> </div>
-                <div><span>0</span><a href="#">2</a> </div>
-                <div><span>0</span><a href="#">3</a> </div>
-                <div><span>0</span><a href="#">4</a> </div>
-                <div><span>0</span><a href="#">5</a> </div>
 
+        <div id="container" style="position: absolute; top: 25%; left: 30%">
+            <span id="question">什么是你最喜欢的服务器端语言？</span>
+            <div id="question_view" style="position: absolute;">
+                <div><span>0</span><a href="">投票</a>PHP</div>
+                <div><span>0</span><a href="">投票</a>Ruby</div>
+                <div><span>0</span><a href="">投票</a>Java</div>
+                <div><span>0</span><a href="">投票</a>ASP</div>
+                <div><span>0</span><a href="">投票</a>Perl</div>
+                <div><span>0</span><a href="">投票</a>ColdFusion</div>
             </div>
+
         </div>
-    </div>
+        <div style="text-align:center;clear:both">
+        </div>
 </body>
 </html>
